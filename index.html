@@ -1,0 +1,162 @@
+<html lang="en">
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <!--  ----------------------------------------------------------------------  -->
+        <!--  NOTE: Please add the following <FORM> element to your page.             -->
+        <!--  ----------------------------------------------------------------------  -->
+        <style>
+            body {
+            background-color: white;
+            }
+            
+            .pbTitle {
+            white-space: nowrap;
+            border: white;
+            }
+            
+            label {
+            font-size: 0.85rem !important;
+            }
+            
+            input,
+            select,
+            textarea {
+            display: inline-block;
+            width: 300px;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+            }
+            
+            .registerbtn {
+            width: auto;
+            opacity: 0.9;
+            }
+            
+            .form-container {
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+            
+            .logo-container {
+            width: 120px;
+            margin: 0 auto;
+            }
+            
+            .body {
+            padding: 20px;
+            max-width: 520px;
+            margin: 0 auto;
+            }
+            
+            .submit-container {
+            text-align: center;
+            }
+            
+            .each-element {
+            margin-top: 10px;
+            }
+
+            .center {
+                text-align: center;
+            }
+        </style>
+        
+        <div class="body slds-scope">
+            <h1 class="center">Register Lead</h1>
+            <div class="slds-form">
+                    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQH000005SFkP" method="POST">
+
+<input type=hidden name="oid" value="00DQH000005SFkP">
+<input type=hidden name="retURL" value="http://www.arrayminds.com">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail" value="info@arrayminds.com">     -->
+<!--  ----------------------------------------------------------------------  -->
+
+<div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="first_name">First Name</label>
+                        <div class="slds-form-element__control">
+                            <input class="slds-input" id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br />
+                        </div>
+                    </div>
+                    
+                    <div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="last_name">Last Name</label>
+                        <div class="slds-form-element__control">
+                            <input class="slds-input" id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br />
+                        </div>
+                    </div>
+                    
+                    <div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="email">Email</label>
+                        <div class="slds-form-element__control">
+                            <input class="slds-input" id="email" maxlength="80" name="email" size="20" type="text" /><br />
+                        </div>
+                    </div>
+                    
+                    <div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="company">Company</label>
+                        <div class="slds-form-element__control">
+                            <input class="slds-input" id="company" maxlength="40" name="company" size="20" type="text" /><br />
+                        </div>
+                    </div>
+                    
+                    <div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="city">City</label>
+                        <div class="slds-form-element__control">
+                            <input class="slds-input" id="city" maxlength="40" name="city" size="20" type="text" /><br />
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="each-element slds-form-element">
+                        <label class="slds-form-element__label" for="Campaign_ID">Campaign</label>
+                        <div class="slds-form-element__control">
+                            <select class="slds-input" id="Campaign_ID" name="Campaign_ID">
+                                <option value="">--None--</option>
+                                <option value="7018d000000xT4R">Play Area Campaign</option>
+                                <option value="7018d000000xT4M">Campaign for Work Station</option>
+                                <option value="7018d000001EOqf">GC Product Webinar - Jan 7, 2002</option>
+                                <option value="7018d000001EOqg">User Conference - Jun 17-19, 2002</option>
+                                <option value="7018d000001EOqh">DM Campaign to Top Customers - Nov 12-23, 2001</option>
+                                <option value="7018d000001EOqi">International Electrical Engineers Association Trade Show - Mar 4-5, 2002</option>
+                            </select><br />
+                        </div>
+                    </div> -->
+
+                    <input type="hidden" id="Campaign_ID" name="Campaign_ID" />
+                    
+                    
+                    <div class="submit-container">
+                        <input class="registerbtn slds-button slds-button_brand" type="submit" name="submit" />
+                    </div>        
+                </form>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        let url = (window.location != window.parent.location) ? document.referrer : document.location.href;
+        console.log({url});
+        const queryString = url.split('?')[1];
+        console.log({queryString});
+        const urlParams = new URLSearchParams(queryString);
+        console.log({urlParams});
+        const campaignId = urlParams.get("cmpid");
+        console.log({campaignId});
+        //var campaignId = '{!$CurrentPage.parameters.cmpid}';
+        document.getElementById('Campaign_ID').value = campaignId;
+    </script>
+</html>
